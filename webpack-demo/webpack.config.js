@@ -73,11 +73,17 @@ module.exports = {
             use: {
                 loader: 'babel-loader',
                 options: {
-                    presets: [['@babel/preset-env', { 
-                        useBuiltIns: "usage" ,
+                    presets: [['@babel/preset-env', {
+                        useBuiltIns: "usage",
                         targets: { chrome: "64" },
                     }]],
-                    // "plugins":[[""]]
+                    // presets和plugins二选一(polyfill和plugin-transform-runtime)
+                    // presets+useBuiltIns=179k  plugins= 225k presets+useBuiltIns+target=34.7k
+                    // plugins: [["@babel/plugin-transform-runtime", {
+                    //     "corejs": 2,
+                    //     "helpers": true,
+                    //     "regenerator": true,
+                    // }]]
                 }
             }
         }
@@ -86,6 +92,7 @@ module.exports = {
     plugins: [new htmlWebpackPlugin({
         template: 'src/index.html'
     }), new CleanWebpackPlugin(),
-    new HotModuleReplacementPlugin()
+    new HotModuleReplacementPlugin(),
     ],
+    
 }

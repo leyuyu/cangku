@@ -1,5 +1,4 @@
-
- import "@babel/polyfill";
+// import "@babel/polyfill";
 // import _ from 'lodash';
 // import header from "./header.js";
 // import sidebar from "./sidebar.js";
@@ -9,6 +8,7 @@
 // import counter from './counter.js'
 // import number from './number'
 // import  './style.css'
+import {add1} from './math'
 
 // import ava from './ava.png'
 // import  './index.scss'
@@ -45,6 +45,8 @@
 //     })
 // }
 
-//
-let p = new Promise(()=>{})
-let m = [1,2,3].find(item=> item===2)
+
+// let p = new Promise(()=>{})
+// let m = [1,2,3].find(item=> item===2)
+
+add1(2,3)
