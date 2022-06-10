@@ -4,6 +4,7 @@
   "description": "",
   "author": "wq",
   "license": "ISC",
+  "sideEffects": false,
   "scripts": {
     "watch": "webpack --watch",
     "start": "webpack-dev-server",

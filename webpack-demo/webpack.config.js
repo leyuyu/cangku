@@ -94,5 +94,18 @@ module.exports = {
     }), new CleanWebpackPlugin(),
     new HotModuleReplacementPlugin(),
     ],
-    
+    optimization:{
+        splitChunks: {
+            minSize: 30000, //引入的模块大于30000字节，则进行拆分
+            chunks: 'all', //是否做代码分割
+            cacheGroups: { //怎么打包
+                // vendors: {
+                //     test: /[\\/]node_modules[\\/]/, //引入的库在node_modules中
+                //     priority: -10,
+                //   },
+                // default: false
+            }
+        }
+        //usedExports: true,
+    }
 }
